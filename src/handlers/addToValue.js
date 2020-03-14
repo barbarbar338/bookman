@@ -8,22 +8,22 @@ module.exports = (name, value, id, fileName) => {
         if (!name[0] || name[0] == null) throw new Error("[Bookman DB] data name must be a string like 'data.subdata'");
         if (!file[id][name[0]]) {
             if (!name[1]) {
-                file[id][name[0]] = (value ||null);
+                file[id][name[0]] = value;
                 writeFile(fileName, file);
             } else if (name[1]) {
                 file[id][name[0]] = {
-                    [name[1]]: (value ||null)
+                    [name[1]]: value
                 }
                 writeFile(fileName, file);
             }
         } else if (!name[1] && file[id][name[0]]) {
-            file[id][name[0]] = (value ||null);
+            file[id][name[0]] = file[id][name[0]] + value;
                 writeFile(fileName, file);
         } else if (name[1] && !file[id][name[0]][name[1]]) {
             file[id][name[0]][name[1]] = value;
             writeFile(fileName, file);
         } else if (name[1] && file[id][name[0]][name[1]]) {
-            file[id][name[0]][name[1]] = value;
+            file[id][name[0]][name[1]] = file[id][name[0]][name[1]] + value;
             writeFile(fileName, file);
         }
     } catch (err) {

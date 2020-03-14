@@ -22,6 +22,9 @@ db.set("trash_data", "gonna_delete"); // => "gonna_delete"
 db.get("trash_data"); // => "gonna_delete"
 /* Check if data created */
 db.has("trash_data"); // => true
+/* Add specified data */
+db.add("number_data", 1) // => 1
+db.add("number_data", 1) // => 2
 /* Mapping data */
 db.map(); // =>  { "trash_data": "gonna_delete"}
 /* Deleting a value in the database */
@@ -32,7 +35,7 @@ db.delete("trash_data"); // => "gonna_delete" has been deleted
 
 ```js
 /* BookmanDB Packages */
-const Bookman = require("bookman");
+const Bookman = require("./Bookman");
 
 /* 
  * Creating New Database
@@ -62,6 +65,7 @@ dbMain.set("developers_motto.baris", "lul"); // => { "baris": "lul"}
 dbMain.set("developers_motto.murat", "lol"); // => { "murat": "lol"}
 dbMain.set("developers_motto.stranger", "who am I?") // => { "stranger": "who am I?"}
 dbMain.set("trash_data", "gonna_delete") // => "gonna_delete"
+dbMain.set("number_value", 1); // => 1
 
 /*
  * Setting a value in the child
@@ -71,8 +75,18 @@ dbMain.set("trash_data", "gonna_delete") // => "gonna_delete"
  */
 firstChild.set("module_name", "bookman"); // => "bookman"
 firstChild.set("trash_data", "gonna_delete") // => "gonna_delete"
+secondChild.set("number_value", 1); // => 1
 secondChild.set("module.page", "https://www.npmjs.com/package/bookman") // { "page": "https://www.npmjs.com/package/bookman"}
 secondChild.set("module.author", "Barış DEMİRCİ") // => { "author": "Barış Demirci" }
+
+/*
+ * Add specified data
+ * Example: db.add(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ */
+dbMain.add("number_value", 1); // => 2
+secondChild.add("number_value", 1); // => 2
 
 /*
  * Deleting a value in the database or child
@@ -106,9 +120,9 @@ secondChild.has("module.page") // => true
  * Mapping data
  * Example: db.map()
  */
-dbMain.map(); // => { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }
+dbMain.map(); // => { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' }, "number_value": 2 }
 firstChild.map(); // => { "module_name": "bookman" }
-console.log(dbMain.mapChild()) // => [ { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }, { "module_name": 'bookman' }, { "module": { "page": 'https://www.npmjs.com/package/bookman', "author": 'Barış DEMİRCİ' } } ]
+console.log(dbMain.mapChild()) // => [ { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }, { "module_name": 'bookman' }, { "module": { "page": 'https://www.npmjs.com/package/bookman', "author": 'Barış DEMİRCİ' }, "number_value": 2 } ]
 ```
 <p>It looks so scary right :D Don't worry you dont have to use all of these xd</p>
 

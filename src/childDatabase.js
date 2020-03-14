@@ -18,6 +18,9 @@ class childBookmanDB {
     has(name) {
         return require("./handlers/hasValue")(name, this.id, this.fileName);
     }
+    add(name, value) {
+        return require("./handlers/addToValue")(name, value, this.id, this.fileName);
+    }
     map() {
         return require("./handlers/mapDatabase")(this.id, this.fileName);
     }
