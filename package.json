@@ -1,0 +1,32 @@
+{
+  "name": "bookman",
+  "version": "1.4.2",
+  "description": "A database that you can not stop using it",
+  "main": "Bookman.js",
+  "scripts": {
+    "test": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbarbar338/bookman.git"
+  },
+  "keywords": [
+    "db",
+    "database",
+    "file",
+    "save",
+    "bookman",
+    "quick",
+    "quick.db",
+    "json"
+  ],
+  "author": "Barış DEMİRCİ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barbarbar338/bookman/issues"
+  },
+  "homepage": "https://github.com/barbarbar338/bookman#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}

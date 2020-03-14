@@ -1,36 +1,3 @@
-BookmanDB: An Easy-To-Use Database 
-======
-
-<p><b>BookmanDB</b> is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!</p>
-<p><b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.</p>
-
-<b>[NPM Page](https://www.npmjs.com/package/bookman)</b>
--------
-
-Usage
-------------
-<p>Here is a simple but effective example!</p>
-
-```js
-/* BookmanDB Packages */
-const Bookman = require("bookman");
-/* Creating New Database */
-const db = new Bookman("saveFile_name");
-/* Setting a value in the database */
-db.set("trash_data", "gonna_delete"); // => "gonna_delete"
-/* Fetcing a value in the database */
-db.get("trash_data"); // => "gonna_delete"
-/* Check if data created */
-db.has("trash_data"); // => true
-/* Mapping data */
-db.map(); // =>  { "trash_data": "gonna_delete"}
-/* Deleting a value in the database */
-db.delete("trash_data"); // => "gonna_delete" has been deleted
-```
-
-<p>Isn't it so simple? Let's examine it in a little more detail now</p>
-
-```js
 /* BookmanDB Packages */
 const Bookman = require("bookman");
 
@@ -109,10 +76,3 @@ secondChild.has("module.page") // => true
 dbMain.map(); // => { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }
 firstChild.map(); // => { "module_name": "bookman" }
 console.log(dbMain.mapChild()) // => [ { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }, { "module_name": 'bookman' }, { "module": { "page": 'https://www.npmjs.com/package/bookman', "author": 'Barış DEMİRCİ' } } ]
-```
-<p>It looks so scary right :D Don't worry you dont have to use all of these xd</p>
-
-[Contact Me For More Help](https://www.is-my.fun/ulas)
--------------------
-
-\ ゜o゜)ノ
