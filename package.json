@@ -1,14 +1,14 @@
 {
   "name": "bookman",
-  "version": "1.4.3",
-  "description": "A database that you can not stop using it",
+  "version": "1.5.2",
+  "description": "BookmanDB is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!",
   "main": "Bookman.js",
   "scripts": {
     "test": "node example.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/barbarbar338/bookman.git"
+    "url": "https://github.com/barbarbar338/bookman"
   },
   "keywords": [
     "db",
@@ -18,7 +18,9 @@
     "bookman",
     "quick",
     "quick.db",
-    "json"
+    "json",
+    "api",
+    "server"
   ],
   "author": "Barış DEMİRCİ",
   "license": "MIT",
@@ -27,6 +29,7 @@
   },
   "homepage": "https://github.com/barbarbar338/bookman#readme",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "syncrequest": "^1.4.7"
   }
 }

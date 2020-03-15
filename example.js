@@ -1,5 +1,5 @@
 /* BookmanDB Packages */
-const Bookman = require("bookman");
+const Bookman = require("./Bookman");
 
 /* 
  * Creating New Database
@@ -86,4 +86,50 @@ secondChild.has("module.page") // => true
  */
 dbMain.map(); // => { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' }, "number_value": 2 }
 firstChild.map(); // => { "module_name": "bookman" }
-console.log(dbMain.mapChild()) // => [ { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }, { "module_name": 'bookman' }, { "module": { "page": 'https://www.npmjs.com/package/bookman', "author": 'Barış DEMİRCİ' }, "number_value": 2 } ]
+dbMain.mapChild(); // => [ { "npm_page": 'https://www.npmjs.com/package/bookman', "developers_motto": { "baris": 'lul', "murat": 'lol' } }, { "module_name": 'bookman' }, { "module": { "page": 'https://www.npmjs.com/package/bookman', "author": 'Barış DEMİRCİ' }, "number_value": 2 } ]
+
+/* API SYSTEM */
+/*
+ * Creatin Database API
+ * Example: const db = new Bookman.API(PASSWORD);
+ * PASSWORD must be a String like "SERVER_TEST_PASSWORD"
+ * NOTE: Everyone's password is unique to him. 
+ * Please contact me for a password and please don't give your password to others
+ * Anyone who has your password will be able to access your data.
+ * You can use the following password for testing ("SERVER_TEST_PASSWORD")
+ */
+const APIdb = new Bookman.API("SERVER_TEST_PASSWORD")
+
+/* Setting a value in the database API
+ * Example: db.set(DATA_NAME, DATA_VALUE);
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE can be anything like true, false, 10, "data", {}...
+*/
+APIdb.set("trash_data", "gonna_delete"); // => "gonna_delete"
+
+/*
+ * Deleting a value in the database API
+ * Example: db.delete(DATA_NAME);
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ */
+APIdb.delete("trash_data"); // => "gonna_delete" has ben deleted
+
+/*
+ * Fetcing a value in the database API
+ * Example: db.get(DATA_NAME);
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ */
+APIdb.get("trash_data"); // => "gonna_delete"
+
+/*
+ * Check if data created in API
+ * Example: db.has(DATA_NAME)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ */
+APIdb.has("trash_data"); // => true
+
+/* 
+ * Mapping data
+ * Example: db.map()
+ */
+APIdb.map(); // => { "trash_data": "gonna_delete" }
