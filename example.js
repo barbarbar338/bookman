@@ -1,5 +1,5 @@
 /* BookmanDB Packages */
-const Bookman = require("bookman");
+const Bookman = require("./Bookman");
 
 /* 
  * Creating New Database
@@ -47,10 +47,19 @@ secondChild.set("module.author", "Barış DEMİRCİ") // => { "author": "Barış
  * Add specified data
  * Example: db.add(DATA_NAME, DATA_VALUE)
  * DATA_NAME must be a String like "data" or "data.subdata"
- * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ * DATA_VALUE must be a Number like 1, 2, 3
  */
 dbMain.add("number_value", 1); // => 2
 secondChild.add("number_value", 1); // => 2
+
+/*
+ * push specified data
+ * Example: db.push(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE must be a String or Array like "string" or [1, 2, 3]
+ */
+dbMain.push("array_value", "str"); // => ["str"]
+secondChild.push("array_value", ["str", "str2"]); // => ["str", "str2"]
 
 /*
  * Deleting a value in the database or child
@@ -125,10 +134,19 @@ APIdb.get("trash_data"); // => "gonna_delete"
  * Add specified data to API
  * Example: db.add(DATA_NAME, DATA_VALUE)
  * DATA_NAME must be a String like "data" or "data.subdata"
- * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ * DATA_VALUE must be a Number like 1, 2, 3
  */
 APIdb.add("number_value", 1); // => 1
 APIdb.add("number_value", 1); // => 2
+
+/*
+ * push specified data to API
+ * Example: db.push(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE must be a String or Array like "string" or [1, 2, 3]
+ */
+APIdb.push("array_value", "str"); // => ["str"]
+APIdb.push("array_value", ["str", "str2"]); // => ["str", "str2"]
 
 /*
  * Check if data created in API

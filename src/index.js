@@ -18,6 +18,9 @@ class BookmanDB {
     set(name, value) {
         return require("./handlers/setValue")(name, value, this.id, this.fileName);
     }
+    push(name, value) {
+        return require("./handlers/pushValue")(name, value, this.id, this.fileName);
+    }
     delete(name) {
         return require("./handlers/deleteValue")(name, this.id, this.fileName);
     }

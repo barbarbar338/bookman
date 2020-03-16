@@ -11,6 +11,9 @@ class BookmanDBAPI {
     set(name, value) {
         return require("./handlers/setValue")(name, value, this.password);
     }
+    push(name, value) {
+        return require("./handlers/pushValue")(name, value, this.password);
+    }
     delete(name) {
         return require("./handlers/deleteValue")(name, this.password);
     }

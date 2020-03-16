@@ -26,6 +26,9 @@ db.has("trash_data"); // => true
 /* Add specified data */
 db.add("number_data", 1) // => 1
 db.add("number_data", 1) // => 2
+/* Push specified data */
+db.push("array_data", "str") // => ["str"]
+db.push("array_data", ["str1", "str2"]) // => ["str", "str1", "str2"]
 /* Mapping data */
 db.map(); // =>  { "trash_data": "gonna_delete"}
 /* Deleting a value in the database */
@@ -84,10 +87,19 @@ secondChild.set("module.author", "Barış DEMİRCİ") // => { "author": "Barış
  * Add specified data
  * Example: db.add(DATA_NAME, DATA_VALUE)
  * DATA_NAME must be a String like "data" or "data.subdata"
- * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ * DATA_VALUE must be a Number like 1, 2, 3
  */
 dbMain.add("number_value", 1); // => 2
 secondChild.add("number_value", 1); // => 2
+
+/*
+ * push specified data
+ * Example: db.push(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE must be a String or Array like "string" or [1, 2, 3]
+ */
+dbMain.push("array_value", "str"); // => ["str"]
+secondChild.push("array_value", ["str", "str2"]); // => ["str", "str2"]
 
 /*
  * Deleting a value in the database or child
@@ -143,6 +155,9 @@ db.get("trash_data"); // => "gonna_delete"
 /* Add specified data to API */
 db.add("number_data", 1) // => 1
 db.add("number_data", 1) // => 2
+/* Push specified data to API */
+db.push("array_data", "str") // => ["str"]
+db.push("array_data", ["str1", "str2"]) // => ["str", "str1", "str2"]
 /* Check if data created in API */
 db.has("trash_data"); // => true
 /* Mapping data */
@@ -191,10 +206,19 @@ APIdb.get("trash_data"); // => "gonna_delete"
  * Add specified data to API
  * Example: db.add(DATA_NAME, DATA_VALUE)
  * DATA_NAME must be a String like "data" or "data.subdata"
- * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ * DATA_VALUE must be a Number like 1, 2, 3
  */
 APIdb.add("number_value", 1); // => 1
 APIdb.add("number_value", 1); // => 2
+
+/*
+ * push specified data to API
+ * Example: db.push(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE must be a String or Array like "string" or [1, 2, 3]
+ */
+APIdb.push("array_value", "str"); // => ["str"]
+APIdb.push("array_value", ["str1", "str2"]); // => ["str", "str1", "str2"]
 
 
 /*
