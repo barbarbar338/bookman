@@ -1,6 +1,6 @@
 {
   "name": "bookman",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "BookmanDB is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!",
   "main": "Bookman.js",
   "scripts": {

@@ -20,6 +20,9 @@ class BookmanDBAPI {
     has(name) {
         return require("./handlers/hasValue")(name, this.password);
     }
+    add(name, value) {
+        return require("./handlers/addToValue")(name, value, this.password);
+    }
     map() {
         return require("./handlers/mapDatabase")(this.password);
     }

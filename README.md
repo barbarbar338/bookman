@@ -4,7 +4,6 @@ BookmanDB: An Easy-To-Use Database
 <p><b>BookmanDB</b> is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!</p>
 <p><b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.</p>
 <p><b>BookmanDB</b> even offers you an API system! Read the API tab below for more information</p>
-
 <b>[NPM Page](https://www.npmjs.com/package/bookman)</b>
 -------
 
@@ -140,6 +139,9 @@ const db = new Bookman.API("SERVER_TEST_PASSWORD");
 db.set("trash_data", "gonna_delete"); // => "gonna_delete"
 /* Fetcing a value in the database API */
 db.get("trash_data"); // => "gonna_delete"
+/* Add specified data to API */
+db.add("number_data", 1) // => 1
+db.add("number_data", 1) // => 2
 /* Check if data created in API */
 db.has("trash_data"); // => true
 /* Mapping data */
@@ -183,6 +185,16 @@ APIdb.delete("trash_data"); // => "gonna_delete" has ben deleted
  * DATA_NAME must be a String like "data" or "data.subdata"
  */
 APIdb.get("trash_data"); // => "gonna_delete"
+
+/*
+ * Add specified data to API
+ * Example: db.add(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ */
+APIdb.add("number_value", 1); // => 1
+APIdb.add("number_value", 1); // => 2
+
 
 /*
  * Check if data created in API

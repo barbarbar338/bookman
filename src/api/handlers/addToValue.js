@@ -4,6 +4,6 @@ module.exports = (name, value, pass) => {
         name: name,
         value: value
     }
-    let result = require("../methods/makeApiRequest")("set", json);
+    let result = require("../methods/makeApiRequest")("add", json);
     return require("../methods/checkApiResult")(result);
 }

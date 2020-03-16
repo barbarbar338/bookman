@@ -1,5 +1,5 @@
 /* BookmanDB Packages */
-const Bookman = require("bookman");
+const Bookman = require("./Bookman");
 
 /* 
  * Creating New Database
@@ -120,6 +120,15 @@ APIdb.delete("trash_data"); // => "gonna_delete" has ben deleted
  * DATA_NAME must be a String like "data" or "data.subdata"
  */
 APIdb.get("trash_data"); // => "gonna_delete"
+
+/*
+ * Add specified data to API
+ * Example: db.add(DATA_NAME, DATA_VALUE)
+ * DATA_NAME must be a String like "data" or "data.subdata"
+ * DATA_VALUE can be anything like true, false, 10, "data", {}...
+ */
+APIdb.add("number_value", 1); // => 1
+APIdb.add("number_value", 1); // => 2
 
 /*
  * Check if data created in API
