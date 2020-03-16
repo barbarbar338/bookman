@@ -5,7 +5,7 @@ BookmanDB: An Easy-To-Use Database
 <p><b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.</p>
 <p><b>BookmanDB</b> even offers you an API system! Read the API tab below for more information</p>
 
-<b>[NPM Page](https://www.npmjs.com/package/bookman)</b>
+<b>[NPM Page](https://www.npmjs.com/package/bookman) [GITHUB Page](https://github.com/barbarbar338/bookman) [DOCS](https://db.is-my.fun/docs)</b>
 -------
 
 Usage
