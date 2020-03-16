@@ -1,5 +1,5 @@
 /* BookmanDB Packages */
-const Bookman = require("./Bookman");
+const Bookman = require("bookman");
 
 /* 
  * Creating New Database
