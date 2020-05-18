@@ -1,0 +1,38 @@
+{
+  "author": {
+    "name": "Barış DEMIRCI"
+  },
+  "bugs": {
+    "url": "https://github.com/barbarbar338/bookman/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
+  "deprecated": false,
+  "description": "BookmanDB is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!",
+  "homepage": "https://github.com/barbarbar338/bookman#readme",
+  "keywords": [
+    "db",
+    "database",
+    "file",
+    "sync",
+    "save",
+    "bookman",
+    "quick",
+    "quick.db",
+    "json",
+    "fast"
+  ],
+  "license": "MIT",
+  "main": "BookmanDB.js",
+  "name": "bookman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbarbar338/bookman.git"
+  },
+  "scripts": {
+    "test": "node example.js"
+  },
+  "version": "2.0.1"
+}

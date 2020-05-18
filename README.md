@@ -4,6 +4,9 @@ BookmanDB: An Easy-To-Use Database
 <p><b>BookmanDB</b> is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!</p>
 <p><b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.</p>
 
+<b>[Discord: https://discord.com/invite/BjEJFwh](https://discord.com/invite/BjEJFwh)</b>
+-------
+
 <b>[NPM Page](https://www.npmjs.com/package/bookman) [GITHUB Page](https://github.com/barbarbar338/bookman)</b>
 -------
 
