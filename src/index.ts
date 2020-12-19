@@ -1,6 +1,6 @@
 import { set, get, has, unset } from "lodash";
 import { FS } from "./FS";
-import { existsSync, mkdirSync } from "fs";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
 
 export const adapters = {
 	FS,
@@ -16,8 +16,14 @@ export class Database {
 
 		console.log(this.adapter instanceof FS);
 
-		if (this.adapter instanceof FS && !existsSync("./.bookman"))
+		if (this.adapter instanceof FS && !existsSync("./.bookman")) {
 			mkdirSync("./.bookman");
+		}
+
+		if (this.adapter instanceof FS && !existsSync(`./.bookman/${name}.json`)) {
+			writeFileSync(`./.bookman/${name}.json`, "{}");
+		}
+			
 	}
 
 	private getDefaultData = (): { [prop: string]: unknown } =>
