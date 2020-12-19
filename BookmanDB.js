@@ -1,1 +1,0 @@
-module.exports=require("./src/Database");module.exports.Database=require("./src/Database");
