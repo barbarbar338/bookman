@@ -15,7 +15,7 @@
 /* BookmanDB Files */
 const { Database } = require("bookman");
 /* Creating New Database */
-const db = new Database("path/to/file");
+const db = new Database("DatabaseName");
 
 /* Setting a value in the database */
 db.set("just.a.long.data.name", "Bookman is cool!"); // => "Bookman is cool!"
@@ -59,6 +59,9 @@ db.map(); // =>  { just: { a: { long: [Object] } } }
 
 /* Deleting a value in the database */
 db.delete("just.a.long"); // => { just: { a: { long: [Object] } } } has been deleted
+
+/* Destroying database */
+db.destroy(); // true
 ```
 
 <p>It looks so scary right :D Don't worry you dont have to know all of these xd</p>
