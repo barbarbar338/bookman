@@ -6,35 +6,38 @@ export const adapters = {
 	FS,
 };
 
+export interface BookmanOptions {
+	defaultDir: string;
+}
+
 export class Database {
 	private name: string;
 	private adapter: FS;
+	private defaultDir = ".bookman";
 
-	constructor(name: string, adapter: FS = new FS()) {
+	constructor(name: string, options: BookmanOptions = { defaultDir: ".bookman" }, adapter: FS = new FS()) {
 		this.name = name;
 		this.adapter = adapter;
-
-		console.log(this.adapter instanceof FS);
-
-		if (this.adapter instanceof FS && !existsSync("./.bookman")) {
-			mkdirSync("./.bookman");
+		this.defaultDir = options.defaultDir;
+		if (this.adapter instanceof FS && !existsSync(`./${this.defaultDir}`)) {
+			mkdirSync(`./${this.defaultDir}`);
 		}
 
-		if (this.adapter instanceof FS && !existsSync(`./.bookman/${name}.json`)) {
-			writeFileSync(`./.bookman/${name}.json`, "{}");
+		if (this.adapter instanceof FS && !existsSync(`./${this.defaultDir}/${name}.json`)) {
+			writeFileSync(`./${this.defaultDir}/${name}.json`, "{}");
 		}
 			
 	}
 
 	private getDefaultData = (): { [prop: string]: unknown } =>
-		this.adapter.get(this.name)
-			? JSON.parse(this.adapter.get(this.name))
+		this.adapter.get(this.name, this.defaultDir)
+			? JSON.parse(this.adapter.get(this.name, this.defaultDir))
 			: {};
 
 	public set(name: string, value: unknown): unknown {
 		const data = this.getDefaultData();
 		set(data, name, value);
-		this.adapter.set(this.name, JSON.stringify(data));
+		this.adapter.set(this.name, JSON.stringify(data), this.defaultDir);
 		return get(data, name);
 	}
 
@@ -111,7 +114,7 @@ export class Database {
 	public delete(name: string): unknown {
 		const data = this.getDefaultData();
 		unset(data, name);
-		this.adapter.set(this.name, JSON.stringify(data));
+		this.adapter.set(this.name, JSON.stringify(data), this.defaultDir);
 		return data;
 	}
 
@@ -120,5 +123,5 @@ export class Database {
 	public all = this.fetchAll;
 	public getAll = this.fetchAll;
 
-	public destroy = (): boolean => this.adapter.destroy(this.name);
+	public destroy = (): boolean => this.adapter.destroy(this.name, this.defaultDir);
 }

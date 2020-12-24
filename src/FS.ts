@@ -1,14 +1,14 @@
 import { writeFileSync, readFileSync, unlinkSync } from "fs";
 
 export class FS {
-	set(name: string, value: string): void {
-		return writeFileSync(`./.bookman/${name}.json`, value);
+	set(name: string, value: string, defaultDir: string): void {
+		return writeFileSync(`./${defaultDir}/${name}.json`, value);
 	}
-	get(name: string): string {
-		return readFileSync(`./.bookman/${name}.json`, "utf-8");
+	get(name: string, defaultDir: string): string {
+		return readFileSync(`./${defaultDir}/${name}.json`, "utf-8");
 	}
-	destroy(name: string): boolean {
-		unlinkSync(`./${name}`);
+	destroy(name: string, defaultDir: string): boolean {
+		unlinkSync(`./${defaultDir}/${name}`);
 		return true;
 	}
 }
