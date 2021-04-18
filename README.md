@@ -13,9 +13,13 @@
 
 ```js
 /* BookmanDB Files */
-const { Database } = require("bookman");
+const { Database, adapters } = require("bookman");
 /* Creating New Database */
-const db = new Database("DatabaseName");
+const fsAdapter = new adapters.FS({
+    defaultDir: "database";
+    databaseName: "mydb";
+})
+const db = new Database(fsAdapter);
 
 /* Setting a value in the database */
 db.set("just.a.long.data.name", "Bookman is cool!"); // => "Bookman is cool!"

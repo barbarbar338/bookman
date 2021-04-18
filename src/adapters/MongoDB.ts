@@ -27,7 +27,6 @@ export class MongoDB extends BaseAdapter {
 	public async get(): Promise<LooseObject> {
         let doc = await this.model.findOne({ key: this.opts.databaseName });
         if (!doc) doc = { value: "{}" };
-        console.log(doc.value)
         const data = JSON.parse(doc.value);
 		return data;
 	}
