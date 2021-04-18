@@ -1,16 +1,16 @@
 import { Document } from "mongoose";
 
 export interface BookmanOptions {
-    defaultDir: string;
-    databaseName: string;
-    mongodbURL?: string;
+	defaultDir: string;
+	databaseName: string;
+	mongodbURL?: string;
 }
 
 export interface LooseObject {
-    [ prop: string ]: unknown;
+	[prop: string]: unknown;
 }
 
 export interface IMongoModel extends Document {
-    key: string;
-    value: string;
+	key: string;
+	value: string;
 }

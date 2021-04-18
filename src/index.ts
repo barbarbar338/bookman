@@ -12,8 +12,8 @@ export class Database {
 	constructor(
 		adapter: BaseAdapter = new FS({
 			databaseName: "json",
-			defaultDir: ".bookman"
-		})
+			defaultDir: ".bookman",
+		}),
 	) {
 		this.adapter = adapter;
 		this.adapter.init();
