@@ -16,8 +16,8 @@
 const { Database, adapters } = require("bookman");
 /* Creating New Database */
 const fsAdapter = new adapters.FS({
-    defaultDir: "database";
-    databaseName: "mydb";
+    defaultDir: "database",
+    databaseName: "mydb"
 })
 const db = new Database(fsAdapter);
 
