@@ -1,6 +1,6 @@
 {
 	"name": "bookman",
-	"version": "3.2.1",
+	"version": "3.3.0",
 	"main": "dist",
 	"repository": {
 		"type": "git",
@@ -22,7 +22,12 @@
 		"bookman",
 		"quick",
 		"json",
-		"fast"
+		"fast",
+		"mongo",
+		"mongodb",
+		"redis",
+		"mongoose",
+		"handy-redis"
 	],
 	"scripts": {
 		"prebuild": "rimraf dist",
@@ -32,10 +37,13 @@
 		"start": "npm run build && node dist"
 	},
 	"devDependencies": {
-		"@types/lodash": "^4.14.165",
+		"@types/lodash.get": "^4.4.6",
+		"@types/lodash.has": "^4.5.6",
+		"@types/lodash.set": "^4.3.6",
+		"@types/lodash.unset": "^4.5.6",
 		"@types/mongoose": "^5.10.3",
 		"@types/node": "^14.14.14",
-		"@types/sequelize": "^4.28.9",
+		"@types/redis": "^2.8.28",
 		"@typescript-eslint/eslint-plugin": "^4.10.0",
 		"@typescript-eslint/parser": "^4.10.0",
 		"eslint": "^7.16.0",
@@ -44,7 +52,11 @@
 		"typescript": "^4.1.3"
 	},
 	"dependencies": {
-		"lodash": "^4.17.20",
+		"handy-redis": "^2.2.1",
+		"lodash.get": "^4.4.2",
+		"lodash.has": "^4.5.2",
+		"lodash.set": "^4.3.2",
+		"lodash.unset": "^4.5.2",
 		"mongoose": "^5.11.11"
 	}
 }

@@ -1,11 +1,9 @@
 # BookmanDB: An Easy-To-Use Database
 
-<p><b>BookmanDB</b> is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files and database childs!</p>
+<p><b>BookmanDB</b> is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files!</p>
 <p><b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.</p>
 
 ## <b>[Discord: https://discord.com/invite/BjEJFwh](https://discord.com/invite/BjEJFwh)</b>
-
-## <b>[NPM Page](https://www.npmjs.com/package/bookman) [GITHUB Page](https://github.com/barbarbar338/bookman)</b>
 
 ## Usage
 
@@ -13,12 +11,12 @@
 
 ```js
 /* BookmanDB Files */
-const { Database, adapters } = require("bookman");
+const { Database, FSAdapter } = require("bookman");
 /* Creating New Database */
-const fsAdapter = new adapters.FS({
-    defaultDir: "database",
-    databaseName: "mydb"
-})
+const fsAdapter = new FSAdapter({
+	defaultDir: "database",
+	databaseName: "mydb",
+});
 const db = new Database(fsAdapter);
 
 /* Setting a value in the database */
@@ -68,7 +66,40 @@ db.delete("just.a.long"); // => { just: { a: { long: [Object] } } } has been del
 db.destroy(); // true
 ```
 
-<p>It looks so scary right :D Don't worry you dont have to know all of these xd</p>
+# All adapters:
+
+```js
+const { MongoDBAdapter, FSAdapter, RedisAdapter } = require("bookman");
+
+// FS Example
+const fs_adapter = new FSAdapter({
+	defaultDir: "database",
+	databaseName: "mydb",
+});
+const fs_db = new Database(fsAdapter);
+
+// MongoDB Example
+const mongo_adapter = new MongoDBAdapter({
+	defaultDir: "database",
+	databaseName: "mydb",
+	mongodbURL: "YOUR_MONGODB_CONNECTION_URI",
+});
+const mongo_db = new Database(mongo_adapter);
+
+// Redis Example
+const redis_adapter = new RedisAdapter(
+	{
+		defaultDir: "database",
+		databaseName: "mydb",
+	},
+	// these lines are optional for redis client, see https://www.npmjs.com/package/redis#rediscreateclient
+	{
+		host: "127.0.0.1",
+		port: "6379",
+	},
+);
+const redis_db = new Database(redis_adapter);
+```
 
 ## [Contact Me For More Help](https://www.is-my.fun/ulas)
 
