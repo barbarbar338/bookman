@@ -13,18 +13,22 @@ const MongoSchema = new Schema({
 	},
 });
 
-export class MongoDB extends BaseAdapter {
+export class MongoDBAdapter extends BaseAdapter {
 	private model: Model<IMongoModel>;
+
 	constructor(opts: BookmanOptions) {
 		super(opts);
+
 		this.model = model<IMongoModel>(this.opts.defaultDir, MongoSchema);
 	}
+
 	public async set(value: string): Promise<LooseObject> {
 		await this.model.updateOne(
 			{ key: this.opts.databaseName },
 			{ value },
 			{ upsert: true },
 		);
+
 		const data = JSON.parse(value);
 		return data;
 	}
@@ -33,11 +37,13 @@ export class MongoDB extends BaseAdapter {
 			key: this.opts.databaseName,
 		})) as any;
 		if (!doc) doc = { value: "{}" } as any;
+
 		const data = JSON.parse(doc.value);
 		return data;
 	}
 	public async destroy(): Promise<boolean> {
 		await this.model.deleteMany({ key: this.opts.databaseName });
+
 		return true;
 	}
 	public async init(): Promise<void> {

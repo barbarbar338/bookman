@@ -8,7 +8,10 @@ export abstract class BaseAdapter {
 	}
 
 	public abstract set(value: unknown): Promise<LooseObject> | LooseObject;
+
 	public abstract get(): Promise<LooseObject> | LooseObject;
+
 	public abstract destroy(): Promise<boolean> | boolean;
+
 	public abstract init(): Promise<void> | void;
 }
