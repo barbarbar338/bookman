@@ -28,7 +28,7 @@ export class Database {
 		set(data, name, value);
 
 		this.json = data;
-		this.adapter.set(JSON.stringify(data));
+		await this.adapter.set(JSON.stringify(data));
 
 		return get(data, name);
 	}
