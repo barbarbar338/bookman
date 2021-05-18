@@ -59,7 +59,7 @@ export class Database {
 		return value;
 	}
 
-	public async shift(name: string): Promise<unknown[]> {
+	public async shift(name: string) {
 		let savedData = this.get(name);
 		if (typeof savedData === "undefined") savedData = [];
 
