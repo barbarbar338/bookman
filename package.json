@@ -57,6 +57,7 @@
 		"lodash.has": "^4.5.2",
 		"lodash.set": "^4.3.2",
 		"lodash.unset": "^4.5.2",
-		"mongoose": "^5.11.11"
+		"mongoose": "^5.11.11",
+		"redis": "^3.1.2"
 	}
 }
