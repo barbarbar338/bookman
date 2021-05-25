@@ -101,6 +101,6 @@ const redis_adapter = new RedisAdapter(
 const redis_db = new Database(redis_adapter);
 ```
 
-## [Contact Me For More Help](https://www.is-my.fun/ulas)
+## [Contact Me For More Help](https://barbarbar338.fly.dev/#contact)
 
 \ ゜ o ゜)ノ
