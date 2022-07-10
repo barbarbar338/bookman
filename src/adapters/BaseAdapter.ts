@@ -1,3 +1,4 @@
+import { Database } from "../Database";
 import { BookmanOptions, LooseObject } from "../types";
 
 export abstract class BaseAdapter {
@@ -13,5 +14,5 @@ export abstract class BaseAdapter {
 
 	public abstract destroy(): Promise<boolean> | boolean;
 
-	public abstract init(): Promise<void> | void;
+	public abstract init(db: Database): Promise<LooseObject> | LooseObject;
 }

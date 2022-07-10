@@ -1,6 +1,7 @@
 import { BaseAdapter } from "./BaseAdapter";
 import { BookmanOptions, LooseObject, IMongoModel } from "../types";
 import { model, Model, Schema, connect } from "mongoose";
+import { Database } from "../Database";
 
 const MongoSchema = new Schema({
 	key: {
@@ -46,10 +47,15 @@ export class MongoDBAdapter extends BaseAdapter {
 
 		return true;
 	}
-	public async init(): Promise<void> {
+	public async init(db: Database): Promise<LooseObject> {
 		connect(this.opts.mongodbURL as string, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
+
+		const data = await this.get();
+		db.json = data;
+
+		return data;
 	}
 }

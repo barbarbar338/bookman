@@ -2,6 +2,7 @@ import { createNodeRedisClient, WrappedNodeRedisClient } from "handy-redis";
 import { BaseAdapter } from "./BaseAdapter";
 import { BookmanOptions, LooseObject } from "../types";
 import type { ClientOpts } from "redis";
+import { Database } from "../Database";
 
 export class RedisAdapter extends BaseAdapter {
 	public client: WrappedNodeRedisClient;
@@ -36,5 +37,10 @@ export class RedisAdapter extends BaseAdapter {
 
 		return true;
 	}
-	public init() {}
+	public async init(db: Database): Promise<LooseObject> {
+		const data = await this.get();
+		db.json = data;
+
+		return data;
+	}
 }

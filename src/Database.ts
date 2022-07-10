@@ -5,7 +5,7 @@ import { LooseObject } from "./types";
 
 export class Database {
 	private adapter: BaseAdapter;
-	private json: LooseObject = {};
+	public json: LooseObject = {};
 
 	constructor(
 		adapter: BaseAdapter = new FSAdapter({
@@ -14,7 +14,7 @@ export class Database {
 		}),
 	) {
 		this.adapter = adapter;
-		this.adapter.init();
+		this.adapter.init(this);
 	}
 
 	private async getDefaultData() {

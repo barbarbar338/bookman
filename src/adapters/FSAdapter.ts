@@ -7,6 +7,7 @@ import {
 } from "fs";
 import { BaseAdapter } from "./BaseAdapter";
 import { LooseObject } from "../types";
+import { Database } from "../Database";
 
 export class FSAdapter extends BaseAdapter {
 	public set(value: string): LooseObject {
@@ -35,7 +36,7 @@ export class FSAdapter extends BaseAdapter {
 		return true;
 	}
 
-	public init(): void {
+	public init(db: Database): LooseObject {
 		if (!existsSync(`./${this.opts.defaultDir}`)) {
 			mkdirSync(`./${this.opts.defaultDir}`);
 		}
@@ -50,5 +51,10 @@ export class FSAdapter extends BaseAdapter {
 				"{}",
 			);
 		}
+
+		const data = this.get();
+		db.json = data;
+
+		return data;
 	}
 }
