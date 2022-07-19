@@ -138,3 +138,27 @@ describe("Database utilities", () => {
 		done();
 	});
 });
+
+describe("test deep value setting", () => {
+	it("set", (done) => {
+		const b = db.set("a.b", 1);
+		const c = db.set("a.c", 2);
+
+		expect(b).to.equal(1);
+		expect(c).to.equal(2);
+
+		done();
+	});
+
+	it("get", (done) => {
+		const a = db.get("a");
+		const b = db.get("a.b");
+		const c = db.get("a.c");
+
+		expect(a).to.deep.equal({ b: 1, c: 2 });
+		expect(b).to.equal(1);
+		expect(c).to.equal(2);
+
+		done();
+	});
+});
