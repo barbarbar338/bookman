@@ -1,13 +1,38 @@
-# BookmanDB: An Easy-To-Use Database
+[![stars](https://img.shields.io/github/stars/barbarbar338/bookman?color=yellow&logo=github&style=for-the-badge)](https://github.com/barbarbar338/bookman)
+[![license](https://img.shields.io/github/license/barbarbar338/bookman?logo=github&style=for-the-badge)](https://github.com/barbarbar338/bookman)
+[![supportServer](https://img.shields.io/discord/711995199945179187?color=7289DA&label=Support&logo=discord&style=for-the-badge)](https://discord.gg/BjEJFwh)
+[![forks](https://img.shields.io/github/forks/barbarbar338/bookman?color=green&logo=github&style=for-the-badge)](https://github.com/barbarbar338/bookman)
+[![issues](https://img.shields.io/github/issues/barbarbar338/bookman?color=red&logo=github&style=for-the-badge)](https://github.com/barbarbar338/bookman)
 
-<p><b>BookmanDB</b> is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files!</p>
-<p><b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/barbarbar338/readme-template/main/icon.png" alt="Logo" width="160" height="160" />
+  <h3 align="center">BookmanDB</h3>
 
-## <b>[Discord: https://discord.com/invite/BjEJFwh](https://discord.com/invite/BjEJFwh)</b>
+  <p align="center">
+    An Easy-To-Use JSON Database
+    <br />
+    <a href="https://discord.gg/BjEJFwh"><strong>Get support »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/barbarbar338/bookman/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/barbarbar338/bookman/issues">Request Feature</a>
+    ·
+    <a href="https://barbarbar338.fly.dev">Some link</a>
+  </p>
+</p>
 
-## Usage
+# ✨ BookmanDB: An Easy-To-Use JSON Database
 
-<p>Here is a simple but effective example!</p>
+-   <b>BookmanDB</b> is a very easy to use and easily editable JSON database module that allows you to create unlimited amount of unique database files!
+-   <b>BookmanDB</b> also saves your data in a json file so you can access and edit simple files at any time.
+
+# 📦 Installation
+
+-   Using yarn: `yarn add bookman`
+-   Using npm: `npm i bookman`
+
+# 🤓 Usage
 
 ```js
 /* BookmanDB Files */
@@ -66,41 +91,29 @@ db.delete("just.a.long"); // => { just: { a: { long: [Object] } } } has been del
 db.destroy(); // true
 ```
 
-# All adapters:
+# 📄 License
 
-```js
-const { MongoDBAdapter, FSAdapter, RedisAdapter } = require("bookman");
+Copyright © 2021 [Barış DEMİRCİ](https://github.com/barbarbar338).
 
-// FS Example
-const fs_adapter = new FSAdapter({
-	defaultDir: "database",
-	databaseName: "mydb",
-});
-const fs_db = new Database(fsAdapter);
+Distributed under the [MIT](https://mit-license.org/) License. See `LICENSE` for more information.
 
-// MongoDB Example
-const mongo_adapter = new MongoDBAdapter({
-	defaultDir: "database",
-	databaseName: "mydb",
-	mongodbURL: "YOUR_MONGODB_CONNECTION_URI",
-});
-const mongo_db = new Database(mongo_adapter);
+# 🧦 Contributing
 
-// Redis Example
-const redis_adapter = new RedisAdapter(
-	{
-		defaultDir: "database",
-		databaseName: "mydb",
-	},
-	// these lines are optional for redis client, see https://www.npmjs.com/package/redis#rediscreateclient
-	{
-		host: "127.0.0.1",
-		port: "6379",
-	},
-);
-const redis_db = new Database(redis_adapter);
-```
+Fell free to use GitHub's features.
 
-## [Contact Me For More Help](https://338.rocks/#contact)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/my-feature`)
+3. Run prettier and eslint (`npm run format && npm run lint`)
+4. Commit your Changes (`git commit -m 'my awesome feature my-feature'`)
+5. Push to the Branch (`git push origin feature/my-feature`)
+6. Open a Pull Request
 
-\ ゜ o ゜)ノ
+# 🔥 Show your support
+
+Give a ⭐️ if this project helped you!
+
+# 📞 Contact
+
+-   Mail: demirci.baris38@gmail.com
+-   Discord: https://discord.gg/BjEJFwh
+-   Instagram: https://www.instagram.com/ben_baris.d/

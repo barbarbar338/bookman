@@ -1,6 +1,6 @@
 {
 	"name": "bookman",
-	"version": "3.3.3",
+	"version": "4.0.0",
 	"main": "dist",
 	"repository": {
 		"type": "git",
@@ -22,42 +22,38 @@
 		"bookman",
 		"quick",
 		"json",
-		"fast",
-		"mongo",
-		"mongodb",
-		"redis",
-		"mongoose",
-		"handy-redis"
+		"fast"
 	],
 	"scripts": {
 		"prebuild": "rimraf dist",
 		"build": "tsc",
 		"lint": "eslint --fix .",
 		"format": "prettier --write .",
-		"start": "npm run build && node dist"
+		"start": "npm run build && node dist",
+		"test": "mocha -r ts-node/register tests/*test*.ts"
 	},
 	"devDependencies": {
-		"@types/lodash.get": "^4.4.6",
-		"@types/lodash.has": "^4.5.6",
-		"@types/lodash.set": "^4.3.6",
-		"@types/lodash.unset": "^4.5.6",
-		"@types/mongoose": "^5.10.5",
-		"@types/node": "^15.3.0",
-		"@types/redis": "^2.8.28",
-		"@typescript-eslint/eslint-plugin": "^4.24.0",
-		"@typescript-eslint/parser": "^4.24.0",
-		"eslint": "^7.26.0",
-		"prettier": "^2.3.0",
+		"@types/chai": "^4.3.1",
+		"@types/lodash.get": "^4.4.7",
+		"@types/lodash.has": "^4.5.7",
+		"@types/lodash.set": "^4.3.7",
+		"@types/lodash.unset": "^4.5.7",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "^18.0.6",
+		"@typescript-eslint/eslint-plugin": "^5.30.6",
+		"@typescript-eslint/parser": "^5.30.6",
+		"chai": "^4.3.6",
+		"eslint": "^8.20.0",
+		"mocha": "^10.0.0",
+		"prettier": "^2.7.1",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.2.4"
+		"ts-node": "^10.9.1",
+		"typescript": "^4.7.4"
 	},
 	"dependencies": {
-		"handy-redis": "^2.2.1",
 		"lodash.get": "^4.4.2",
 		"lodash.has": "^4.5.2",
 		"lodash.set": "^4.3.2",
-		"lodash.unset": "^4.5.2",
-		"mongoose": "^5.12.9",
-		"redis": "^3.1.2"
+		"lodash.unset": "^4.5.2"
 	}
 }
