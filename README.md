@@ -18,7 +18,7 @@
     ·
     <a href="https://github.com/barbarbar338/bookman/issues">Request Feature</a>
     ·
-    <a href="https://barbarbar338.fly.dev">Some link</a>
+    <a href="https://338.rocks">Contact</a>
   </p>
 </p>
 
@@ -36,13 +36,9 @@
 
 ```js
 /* BookmanDB Files */
-const { Database, FSAdapter } = require("bookman");
-/* Creating New Database */
-const fsAdapter = new FSAdapter({
-	defaultDir: "database",
-	databaseName: "mydb",
-});
-const db = new Database(fsAdapter);
+const { Database } = require("bookman");
+
+const db = new Database(); // Leave empty for defaults or pass a BookmanOptions type object for customisation
 
 /* Setting a value in the database */
 db.set("just.a.long.data.name", "Bookman is cool!"); // => "Bookman is cool!"
@@ -99,7 +95,7 @@ Distributed under the [MIT](https://mit-license.org/) License. See `LICENSE` for
 
 # 🧦 Contributing
 
-Fell free to use GitHub's features.
+Feel free to use GitHub's features.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/my-feature`)
@@ -114,6 +110,7 @@ Give a ⭐️ if this project helped you!
 
 # 📞 Contact
 
--   Mail: demirci.baris38@gmail.com
+-   Website: https://338.rocks
+-   Mail: hi@338.rocks
 -   Discord: https://discord.gg/BjEJFwh
--   Instagram: https://www.instagram.com/ben_baris.d/
+-   Instagram: https://www.instagram.com/barisdemircix

@@ -1,7 +1,8 @@
 {
 	"name": "bookman",
-	"version": "4.0.0",
+	"version": "4.1.0",
 	"main": "dist",
+	"description": "BookmanDB is a very easy to use and easily editable database module that allows you to create unlimited amount of unique database files!",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/barbarbar338/bookman.git"
@@ -30,25 +31,27 @@
 		"lint": "eslint --fix .",
 		"format": "prettier --write .",
 		"start": "npm run build && node dist",
-		"test": "mocha -r ts-node/register tests/*test*.ts"
+		"test": "mocha -r ts-node/register tests/*test*.ts",
+		"update": "taze latest -w"
 	},
 	"devDependencies": {
-		"@types/chai": "^4.3.1",
-		"@types/lodash.get": "^4.4.7",
-		"@types/lodash.has": "^4.5.7",
-		"@types/lodash.set": "^4.3.7",
-		"@types/lodash.unset": "^4.5.7",
-		"@types/mocha": "^9.1.1",
-		"@types/node": "^18.0.6",
-		"@typescript-eslint/eslint-plugin": "^5.30.6",
-		"@typescript-eslint/parser": "^5.30.6",
-		"chai": "^4.3.6",
-		"eslint": "^8.20.0",
-		"mocha": "^10.0.0",
-		"prettier": "^2.7.1",
-		"rimraf": "^3.0.2",
-		"ts-node": "^10.9.1",
-		"typescript": "^4.7.4"
+		"@types/chai": "^5.2.3",
+		"@types/lodash.get": "^4.4.9",
+		"@types/lodash.has": "^4.5.9",
+		"@types/lodash.set": "^4.3.9",
+		"@types/lodash.unset": "^4.5.9",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^25.0.10",
+		"@typescript-eslint/eslint-plugin": "^8.53.1",
+		"@typescript-eslint/parser": "^8.53.1",
+		"chai": "^6.2.2",
+		"eslint": "^9.39.2",
+		"mocha": "^11.7.5",
+		"prettier": "^3.8.1",
+		"rimraf": "^6.1.2",
+		"taze": "^19.9.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
 	},
 	"dependencies": {
 		"lodash.get": "^4.4.2",
